@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000', 'https://thepahadicraft.com'], // Add your frontend URLs
+  origin: ['http://localhost:5173', 'http://localhost:3000', 'https://thepahadicraft.com/'], 
   credentials: true
 }));
 app.use(express.json());
