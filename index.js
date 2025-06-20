@@ -44,6 +44,9 @@ app.use('/api/create-order', createOrder);
 app.use('/api/verify-payment', verifyPayment);
 app.use('/api/orders', orders);
 app.use('/api/user', userRoute);
+app.get('/', (req, res) => {
+  res.send('Welcome to the Pahadi Craft API');
+});
 // app.use("/api/chat", chatRoutes);
 
 
