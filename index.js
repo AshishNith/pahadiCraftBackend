@@ -7,7 +7,6 @@ const verifyPayment = require('./Routes/verifyPayment');
 const orders = require('./Routes/orders');
 const userRoute = require('./Routes/user.route');
 const mongoose = require('mongoose');
-// const chatRoutes = require('./Routes/chatRoutes');
 require('dotenv').config();
 
 dotenv.config();
@@ -25,7 +24,8 @@ mongoose.connect(process.env.MONGO_URI, {
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000', 'https://thepahadicraft.com/'], 
+  origin: ['https://thepahadicraft.com/', 'https://www.thepahadicraft.com/'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
 app.use(express.json());
