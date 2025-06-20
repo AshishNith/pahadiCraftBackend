@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 const app = express();
 app.use(cors({
-  origin: ['https://thepahadicraft.com/', 'https://www.thepahadicraft.com/', 'http://localhost:5173'],
+  origin: ['https://thepahadicraft.com', 'https://www.thepahadicraft.com', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
