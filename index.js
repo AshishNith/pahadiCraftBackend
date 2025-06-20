@@ -30,6 +30,15 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// // Add static file serving
+// app.use(express.static('public'));
+
+// Add request logging
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+  next();
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error:', err);
@@ -45,6 +54,7 @@ app.use('/api/verify-payment', verifyPayment);
 app.use('/api/orders', orders);
 app.use('/api/user', userRoute);
 app.get('/', (req, res) => {
+  console.log('Root route hit');
   res.send('Welcome to the Pahadi Craft API');
 });
 // app.use("/api/chat", chatRoutes);
